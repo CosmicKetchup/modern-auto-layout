@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ch06_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kOI-Ln-7kb" userLabel="greenView">
+                                <rect key="frame" x="50" y="70" width="275" height="167"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZP-JS-zF6" userLabel="blueView">
+                                        <rect key="frame" x="25" y="25" width="100" height="117"/>
+                                        <color key="backgroundColor" red="0.0" green="0.08472456465" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZ4-Hw-RoF" userLabel="redView">
+                                        <rect key="frame" x="150" y="25" width="100" height="117"/>
+                                        <color key="backgroundColor" red="1" green="0.028078071959999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.16485052659999999" green="1" blue="0.19501212679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="PZP-JS-zF6" firstAttribute="top" secondItem="kOI-Ln-7kb" secondAttribute="topMargin" id="3cl-Vv-qJJ"/>
+                                    <constraint firstItem="pZ4-Hw-RoF" firstAttribute="top" secondItem="kOI-Ln-7kb" secondAttribute="topMargin" id="Bdv-6p-UcW"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="pZ4-Hw-RoF" secondAttribute="bottom" id="C60-NW-tHN"/>
+                                    <constraint firstItem="pZ4-Hw-RoF" firstAttribute="leading" secondItem="PZP-JS-zF6" secondAttribute="trailing" constant="25" id="CYr-Gb-Us5"/>
+                                    <constraint firstAttribute="leadingMargin" secondItem="PZP-JS-zF6" secondAttribute="leading" id="X50-fg-JO9"/>
+                                    <constraint firstItem="PZP-JS-zF6" firstAttribute="width" secondItem="pZ4-Hw-RoF" secondAttribute="width" id="jNj-sB-xuI"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="PZP-JS-zF6" secondAttribute="bottom" id="vlz-vW-mbt"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="pZ4-Hw-RoF" secondAttribute="trailing" id="w4A-XY-rfW"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="25" left="25" bottom="25" right="25"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99396635259999999" green="0.99705451730000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="kOI-Ln-7kb" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="Ic9-7a-PiY"/>
+                            <constraint firstItem="kOI-Ln-7kb" firstAttribute="left" secondItem="6Tk-OE-BBY" secondAttribute="left" constant="50" id="fOk-YU-jT5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="right" secondItem="kOI-Ln-7kb" secondAttribute="right" constant="50" id="gKX-SQ-6Uo"/>
+                            <constraint firstItem="kOI-Ln-7kb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="mPo-08-LeV"/>
+                        </constraints>
+                        <edgeInsets key="layoutMargins" top="50" left="50" bottom="50" right="50"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
