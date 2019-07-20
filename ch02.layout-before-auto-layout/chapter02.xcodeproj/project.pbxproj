@@ -56,20 +56,12 @@
 			children = (
 				B9F7E11F22D16B280046AC02 /* AppDelegate.swift */,
 				B9F7E12622D16B290046AC02 /* Assets.xcassets */,
-				B9F7E12B22D16B290046AC02 /* Info.plist */,
-				B9F7E12822D16B290046AC02 /* LaunchScreen.storyboard */,
-				B9F7E13322D16BEB0046AC02 /* Classes */,
-			);
-			path = chapter02;
-			sourceTree = "<group>";
-		};
-		B9F7E13322D16BEB0046AC02 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
 				B9F7E12122D16B280046AC02 /* RootViewController.swift */,
 				B9F7E13122D16BA70046AC02 /* TileView.swift */,
+				B9F7E12B22D16B290046AC02 /* Info.plist */,
+				B9F7E12822D16B290046AC02 /* LaunchScreen.storyboard */,
 			);
-			path = Classes;
+			path = chapter02;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

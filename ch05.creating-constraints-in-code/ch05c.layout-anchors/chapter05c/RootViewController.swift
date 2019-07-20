@@ -26,6 +26,7 @@ class RootViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        
         if redView.superview == nil && greenView.superview == nil {
             setupView()
         }

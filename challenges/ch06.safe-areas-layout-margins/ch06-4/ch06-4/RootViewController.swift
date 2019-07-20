@@ -29,6 +29,8 @@ class RootViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
         if customView.superview == nil {
             setupView()
         }

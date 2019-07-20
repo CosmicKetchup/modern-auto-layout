@@ -42,6 +42,8 @@ class RootViewController: UIViewController {
     }
 
     override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
         if cancelButton.superview == nil && okButton.superview == nil {
             setupView()
         }
