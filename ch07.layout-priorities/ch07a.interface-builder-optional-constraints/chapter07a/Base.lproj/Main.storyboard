@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="chapter07a" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="f4w-A1-KYb" userLabel="sunView">
+                                <rect key="frame" x="16" y="20" width="100" height="100"/>
+                                <color key="backgroundColor" red="1" green="0.64678844444213035" blue="0.30052313350474469" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snow" translatesAutoresizingMaskIntoConstraints="NO" id="fbj-4Q-3EU" userLabel="snowView">
+                                <rect key="frame" x="209" y="20" width="150" height="150"/>
+                                <color key="backgroundColor" red="0.0" green="0.08472456465" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This label should be below the tallest of the two images" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCt-Yb-NCi">
+                                <rect key="frame" x="16" y="178" width="343" height="115"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xCt-Yb-NCi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8m5-QE-Woq"/>
+                            <constraint firstItem="xCt-Yb-NCi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" priority="250" id="DZn-yT-HAX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xCt-Yb-NCi" secondAttribute="trailing" id="Jnb-ii-Pvf"/>
+                            <constraint firstAttribute="topMargin" secondItem="f4w-A1-KYb" secondAttribute="top" id="RGg-cf-cvw"/>
+                            <constraint firstAttribute="topMargin" secondItem="fbj-4Q-3EU" secondAttribute="top" id="Zc4-1X-euX"/>
+                            <constraint firstItem="xCt-Yb-NCi" firstAttribute="top" relation="greaterThanOrEqual" secondItem="f4w-A1-KYb" secondAttribute="bottom" constant="8" symbolic="YES" id="mfw-hD-Hfk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fbj-4Q-3EU" secondAttribute="trailing" id="nFB-lv-zyK"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="f4w-A1-KYb" secondAttribute="leading" id="vV9-76-EaJ"/>
+                            <constraint firstItem="xCt-Yb-NCi" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fbj-4Q-3EU" secondAttribute="bottom" constant="8" symbolic="YES" id="vWL-yz-2t4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="snow" width="150" height="150"/>
+        <image name="sun" width="100" height="100"/>
+    </resources>
+</document>
