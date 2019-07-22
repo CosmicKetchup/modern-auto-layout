@@ -10,6 +10,10 @@ import UIKit
 
 class RootViewController: UIViewController {
     
+    private enum ViewMetrics {
+        static let shareBtnFontSize: CGFloat = 24.0
+    }
+    
     private let sunView: UIImageView = {
         let iv = UIImageView(image: UIImage(named: "sun")?.withRenderingMode(.alwaysOriginal))
         iv.contentMode = .scaleAspectFit
@@ -20,7 +24,7 @@ class RootViewController: UIViewController {
     private let shareButton: UIButton = {
         let button = UIButton()
         button.setTitle("Share", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: ViewMetrics.shareBtnFontSize)
         button.setTitleColor(.blue, for: .normal)
         button.setContentHuggingPriority(.defaultHigh, for: .vertical)
         return button
@@ -28,28 +32,19 @@ class RootViewController: UIViewController {
     
     private lazy var mainStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [sunView, shareButton])
+        stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.spacing = UIStackView.spacingUseSystem
-        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+
+    private func setupView() {
         view.backgroundColor = .white
-    }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        if mainStack.superview == nil {
-            setupView()
-        }
-    }
-}
-
-extension RootViewController {
-    fileprivate func setupView() {
         view.addSubview(mainStack)
         
         NSLayoutConstraint.activate([

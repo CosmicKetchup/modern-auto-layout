@@ -10,10 +10,14 @@ import UIKit
 
 class RootViewController: UIViewController {
     
+    private enum ViewMetrics {
+        static let headerLabelFontSize: CGFloat = 24.0
+    }
+    
     private let headerLabel: UILabel = {
         let label = UILabel()
         label.text = "Pick A Color"
-        label.font = UIFont.systemFont(ofSize: 24)
+        label.font = UIFont.systemFont(ofSize: ViewMetrics.headerLabelFontSize)
         return label
     }()
     
@@ -40,19 +44,11 @@ class RootViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        setupView()
     }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        if mainStack.superview == nil {
-            setupView()
-        }
-    }
-}
 
-extension RootViewController {
-    fileprivate func setupView() {
+    private func setupView() {
+        view.backgroundColor = .white
         view.addSubview(mainStack)
         
         NSLayoutConstraint.activate([

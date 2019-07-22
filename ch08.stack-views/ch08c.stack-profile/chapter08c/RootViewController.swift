@@ -12,6 +12,9 @@ class RootViewController: UIViewController {
     
     private enum ViewMetrics {
         static let rootMargins: CGFloat = 20.0
+        static let backgroundColor = UIColor(red: 140/255, green: 213/255, blue: 251/255, alpha: 1)
+        static let bioLabelFontSize: CGFloat = 17.0
+        static let nameLabelFontSize: CGFloat = 24.0
     }
     
     let profileImageView: UIImageView = {
@@ -23,7 +26,7 @@ class RootViewController: UIViewController {
     
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.font = UIFont.boldSystemFont(ofSize: ViewMetrics.nameLabelFontSize)
         label.numberOfLines = 0
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)
         label.text = "Sue Appleseed"
@@ -32,7 +35,7 @@ class RootViewController: UIViewController {
     
     private let bioLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 17)
+        label.font = UIFont.systemFont(ofSize: ViewMetrics.bioLabelFontSize)
         label.numberOfLines = 0
         label.text = "Deep sea diver. Donut maker. Tea drinker."
         return label
@@ -41,7 +44,6 @@ class RootViewController: UIViewController {
     private lazy var labelStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [nameLabel, bioLabel])
         stack.axis = .vertical
-//        stack.alignment = .fill // default value for .alignment property
         stack.spacing = UIStackView.spacingUseSystem
         return stack
     }()
@@ -55,27 +57,19 @@ class RootViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Chapter 08c"
-        view.backgroundColor = UIColor(red: 140/255, green: 213/255, blue: 251/255, alpha: 1)
+        setupView()
+    }
+
+    private func setupView() {
+        navigationItem.title = "Chapter 08c"
+        view.backgroundColor = ViewMetrics.backgroundColor
         
         view.directionalLayoutMargins = NSDirectionalEdgeInsets(
             top: ViewMetrics.rootMargins,
             leading: ViewMetrics.rootMargins,
             bottom: ViewMetrics.rootMargins,
             trailing: ViewMetrics.rootMargins)
-    }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
         
-        if mainStack.superview == nil {
-            setupView()
-        }
-    }
-}
-
-extension RootViewController {
-    fileprivate func setupView() {
         view.addSubview(mainStack)
         
         NSLayoutConstraint.activate([

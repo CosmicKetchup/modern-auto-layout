@@ -10,6 +10,12 @@ import UIKit
 
 class RootViewController: UIViewController {
     
+    private enum ViewMetrics {
+        static let stackCornerRadius: CGFloat = 10.0
+        static let mainStackInsets = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
+        static let mainStackSpacing: CGFloat = 16.0
+    }
+    
     private let toggleSwitch: UISwitch = {
         let toggle = UISwitch()
         toggle.addTarget(self, action: #selector(switchToggled(_:)), for: .touchUpInside)
@@ -32,39 +38,33 @@ class RootViewController: UIViewController {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.alignment = .center
-        stack.spacing = 16
-        stack.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
+        stack.spacing = ViewMetrics.mainStackSpacing
+        stack.directionalLayoutMargins = ViewMetrics.mainStackInsets
         stack.isLayoutMarginsRelativeArrangement = true
         return stack
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Chapter 08d"
-        view.backgroundColor = .white
-        configureImageStackAxis()
+        setupView()
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    private func setupView() {
+        navigationItem.title = "Chapter 08d"
+        view.backgroundColor = .white
+        configureImageStackAxis()
         
-        if mainStack.superview == nil {
-            setupView()
-        }
-    }
-}
-
-extension RootViewController {
-    fileprivate func setupView() {
         view.addSubview(mainStack)
-        mainStack.addBackground(color: .purple, radius: 10.0)
+        mainStack.addBackground(color: .purple, radius: ViewMetrics.stackCornerRadius)
         
         NSLayoutConstraint.activate([
             mainStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             mainStack.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
             ])
     }
-    
+}
+
+extension RootViewController {
     @objc fileprivate func switchToggled(_ sender: UISwitch) {
         UIViewPropertyAnimator(
             duration: 0.5,

@@ -27,10 +27,7 @@ class StopGoView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-}
-
-extension StopGoView {
-    fileprivate func setupView() {
+    private func setupView() {
         [redView, greenView].forEach({ addSubview($0) })
         
         NSLayoutConstraint.activate([

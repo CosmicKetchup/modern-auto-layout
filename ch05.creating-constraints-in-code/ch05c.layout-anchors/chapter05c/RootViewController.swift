@@ -21,20 +21,11 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = ViewMetrics.backgroundColor
+        setupView()
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        if redView.superview == nil && greenView.superview == nil {
-            setupView()
-        }
-    }
-}
-
-extension RootViewController {
-    fileprivate func setupView() {
+    private func setupView() {
+        view.backgroundColor = ViewMetrics.backgroundColor
         [redView, greenView].forEach({ view.addSubview($0) })
             
         NSLayoutConstraint.activate([

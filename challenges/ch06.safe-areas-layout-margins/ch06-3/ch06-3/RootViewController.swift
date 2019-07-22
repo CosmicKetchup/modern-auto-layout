@@ -24,20 +24,12 @@ class RootViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+
+    private func setupView() {
         view.backgroundColor = ViewMetrics.backgroundColor
-    }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
         
-        if customView.superview == nil {
-            setupView()
-        }
-    }
-}
-
-extension RootViewController {
-    fileprivate func setupView() {
         view.directionalLayoutMargins = NSDirectionalEdgeInsets(
             top: ViewMetrics.margin,
             leading: ViewMetrics.margin,

@@ -19,20 +19,11 @@ class RootViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+
+    private func setupView() {
         view.backgroundColor = .yellow
-    }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        if greenView.superview == nil {
-            setupView()
-        }
-    }
-}
-
-extension RootViewController {
-    fileprivate func setupView() {
         view.addSubview(greenView)
         
         let leadingEdgeConstraint = greenView.leadingAnchor.constraint(equalTo: view.leadingAnchor)

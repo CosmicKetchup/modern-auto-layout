@@ -38,20 +38,11 @@ class RootViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+
+    private func setupView() {
         view.backgroundColor = ViewMetrics.backgroundColor
-    }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        if cancelButton.superview == nil && okButton.superview == nil {
-            setupView()
-        }
-    }
-}
-
-extension RootViewController {
-    fileprivate func setupView() {
         [cancelButton, okButton].forEach({ view.addSubview($0) })
         
         let leadingGuide = UILayoutGuide()

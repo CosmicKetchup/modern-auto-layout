@@ -24,20 +24,11 @@ class RootViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = ViewMetrics.backgroundColor
+        setupView()
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        if redView.superview == nil {
-            setupView()
-        }
-    }
-}
-
-extension RootViewController {
-    fileprivate func setupView() {
+    private func setupView() {
+        view.backgroundColor = ViewMetrics.backgroundColor
         view.addSubview(redView)
         
         // This is demonstrably the most painful way to add constraints between elements within the view hierarchy.

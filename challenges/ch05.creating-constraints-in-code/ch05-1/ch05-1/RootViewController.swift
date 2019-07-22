@@ -22,32 +22,20 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    private func setupView() {
         view.backgroundColor = ViewMetrics.backgroundColor
-    }
-
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        if greenView.superview == nil {
-            setupView()
-        }
-    }
-}
-
-extension RootViewController {
-    fileprivate func setupView() {
         view.addSubview(greenView)
+        greenView.addSubview(redView)
+        
         NSLayoutConstraint.activate([
             greenView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ViewMetrics.rootPadding),
             view.trailingAnchor.constraint(equalTo: greenView.trailingAnchor, constant: ViewMetrics.rootPadding),
             greenView.topAnchor.constraint(equalTo: view.topAnchor, constant: ViewMetrics.rootPadding),
-            view.bottomAnchor.constraint(equalTo: greenView.bottomAnchor, constant: ViewMetrics.rootPadding)
-            ])
-        
-        greenView.addSubview(redView)
-        
-        NSLayoutConstraint.activate([
+            view.bottomAnchor.constraint(equalTo: greenView.bottomAnchor, constant: ViewMetrics.rootPadding),
+            
             redView.leadingAnchor.constraint(equalTo: greenView.leadingAnchor, constant: ViewMetrics.greenPadding),
             greenView.trailingAnchor.constraint(equalTo: redView.trailingAnchor, constant: ViewMetrics.greenPadding),
             redView.centerYAnchor.constraint(equalTo: greenView.centerYAnchor),

@@ -10,25 +10,20 @@ import UIKit
 
 class RootViewController: UIViewController {
     
+    private enum ViewMetrics {
+        static let authorLabelMinimumWidth: CGFloat = 160.0
+    }
+    
     private let authorLabel = UILabel(text: "William Shakespeare", backgroundColor: .yellow, textColor: .black)
     private let quoteLabel = UILabel(text: "To be, or not to be, that is the question", backgroundColor: .purple, textColor: .white)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+
+    private func setupView() {
         view.backgroundColor = .white
-    }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        if authorLabel.superview == nil && quoteLabel.superview == nil {
-            setupView()
-        }
-    }
-}
-
-extension RootViewController {
-    fileprivate func setupView() {
         [authorLabel, quoteLabel].forEach({ view.addSubview($0) })
         
         let quoteLabelWidthConstraint = quoteLabel.widthAnchor.constraint(equalTo: authorLabel.widthAnchor, multiplier: 2.0)
@@ -38,7 +33,7 @@ extension RootViewController {
             authorLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             quoteLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: authorLabel.trailingAnchor, multiplier: 1.0),
             quoteLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            authorLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 160.0),
+            authorLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: ViewMetrics.authorLabelMinimumWidth),
             quoteLabelWidthConstraint,
             
             authorLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),

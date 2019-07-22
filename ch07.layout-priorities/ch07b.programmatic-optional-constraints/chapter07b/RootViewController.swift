@@ -10,34 +10,29 @@ import UIKit
 
 class RootViewController: UIViewController {
     
+    private enum ViewMetrics {
+        static let textLabelFontSize: CGFloat = 32.0
+    }
+    
     private let sunView = UIImageView(named: "sun", backgroundColor: .orange)
     private let snowView = UIImageView(named: "snow", backgroundColor: .blue)
+    
     private let textLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
         label.numberOfLines = 0
         label.text = "This label should be below the tallest of the two images"
-        label.font = UIFont.systemFont(ofSize: 32.0)
+        label.font = UIFont.systemFont(ofSize: ViewMetrics.textLabelFontSize)
         return label
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+
+    private func setupView() {
         view.backgroundColor = .white
-    }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        if sunView.superview == nil && snowView.superview == nil {
-            setupView()
-        }
-    }
-}
-
-extension RootViewController {
-    fileprivate func setupView() {
         [sunView, snowView, textLabel].forEach({ view.addSubview($0) })
         
         let optionalCaptionConstraint = textLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor)

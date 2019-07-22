@@ -24,20 +24,11 @@ class RootViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+
+    private func setupView() {
         view.backgroundColor = ViewMetrics.backgroundColor
-    }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        if customView.superview == nil {
-            setupView()
-        }
-    }
-}
-
-extension RootViewController {
-    fileprivate func setupView() {
         view.addSubview(customView)
         changeNestedMargins(inset: ViewMetrics.margin)
         
@@ -50,7 +41,7 @@ extension RootViewController {
             ])
     }
     
-    fileprivate func changeNestedMargins(inset: CGFloat) {
+    private func changeNestedMargins(inset: CGFloat) {
         if #available(iOS 11, *) {
             customView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
         }

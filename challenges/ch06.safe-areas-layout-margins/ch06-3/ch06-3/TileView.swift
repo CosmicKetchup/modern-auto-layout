@@ -26,10 +26,8 @@ class TileView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-extension TileView {
-    fileprivate func setupView() {
+    
+    private func setupView() {
         backgroundColor = ViewMetrics.backgroundColor
         
         directionalLayoutMargins = NSDirectionalEdgeInsets(

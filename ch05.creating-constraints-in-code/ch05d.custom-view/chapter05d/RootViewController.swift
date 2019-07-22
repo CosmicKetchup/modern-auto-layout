@@ -22,22 +22,13 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = ViewMetrics.backgroundColor
+        setupView()
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    private func setupView() {
+        view.backgroundColor = ViewMetrics.backgroundColor
         
-        if customView.superview == nil {
-            setupView()
-        }
-    }
-}
-
-extension RootViewController {
-    fileprivate func setupView() {
         view.addSubview(customView)
-        
         NSLayoutConstraint.activate([
             customView.topAnchor.constraint(equalTo: view.topAnchor),
             customView.bottomAnchor.constraint(equalTo: view.bottomAnchor),

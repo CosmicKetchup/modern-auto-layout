@@ -10,6 +10,11 @@ import UIKit
 
 class RootViewController: UIViewController {
     
+    private enum ViewMetrics {
+        static let stackSpacing: CGFloat = 16.0
+        static let mainStackMargin: CGFloat = 16.0
+    }
+    
     private let toggleSwitch: UISwitch = {
         let toggle = UISwitch()
         toggle.isOn = false
@@ -31,38 +36,35 @@ class RootViewController: UIViewController {
     private lazy var keyStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [leftKeyLabel, midKeyLabel, rightKeyLabel])
         stack.distribution = .fillEqually
-        stack.spacing = 16
+        stack.spacing = ViewMetrics.stackSpacing
         return stack
     }()
     
     private lazy var mainStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [toggleSwitch, keyStack])
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.spacing = 16
+        stack.spacing = ViewMetrics.stackSpacing
         stack.axis = .vertical
-        stack.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
         stack.alignment = .center
         stack.isLayoutMarginsRelativeArrangement = true
+        stack.directionalLayoutMargins = NSDirectionalEdgeInsets(
+            top: ViewMetrics.mainStackMargin,
+            leading: ViewMetrics.mainStackMargin,
+            bottom: ViewMetrics.mainStackMargin,
+            trailing: ViewMetrics.mainStackMargin)
+        
         return stack
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Secret Code"
+        setupView()
+    }
+
+    private func setupView() {
+        navigationItem.title = "Secret Code"
         view.backgroundColor = .white
-    }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
         
-        if mainStack.superview == nil {
-            setupView()
-        }
-    }
-}
-
-extension RootViewController {
-    fileprivate func setupView() {
         view.addSubview(mainStack)
         
         let stackBackgroundColor = UIView()
