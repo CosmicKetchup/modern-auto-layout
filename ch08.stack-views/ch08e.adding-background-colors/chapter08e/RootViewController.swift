@@ -52,8 +52,8 @@ class RootViewController: UIViewController {
     private func setupView() {
         navigationItem.title = "Chapter 08d"
         view.backgroundColor = .white
-        configureImageStackAxis()
         
+        configureImageStackAxis()
         view.addSubview(mainStack)
         mainStack.addBackground(color: .purple, radius: ViewMetrics.stackCornerRadius)
         
