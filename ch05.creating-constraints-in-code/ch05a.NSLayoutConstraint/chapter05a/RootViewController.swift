@@ -31,7 +31,7 @@ class RootViewController: UIViewController {
         view.backgroundColor = ViewMetrics.backgroundColor
         view.addSubview(redView)
         
-        // This is demonstrably the most painful way to add constraints between elements within the view hierarchy.
+        // this is demonstrably the most painful way to add constraints between elements within the view hierarchy
         NSLayoutConstraint.activate([
             // redView.leading == view.leading + ViewMetrics.rootPadding
             NSLayoutConstraint(

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="chapter04a" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URB-Fr-fm3" userLabel="redView">
+                                <rect key="frame" x="50" y="70" width="275" height="248.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yai-9g-9re">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="248.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.028078071959999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="yai-9g-9re" firstAttribute="leading" secondItem="URB-Fr-fm3" secondAttribute="leading" id="JaP-Oc-pdR"/>
+                                    <constraint firstItem="yai-9g-9re" firstAttribute="top" secondItem="URB-Fr-fm3" secondAttribute="top" id="R3G-o6-owg"/>
+                                    <constraint firstAttribute="trailing" secondItem="yai-9g-9re" secondAttribute="trailing" id="f2k-P1-X87"/>
+                                    <constraint firstAttribute="bottom" secondItem="yai-9g-9re" secondAttribute="bottom" id="ou6-de-5hi"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yoG-No-8br" userLabel="greenView">
+                                <rect key="frame" x="50" y="368.5" width="275" height="248.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpv-YR-O9Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="248.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <state key="normal" title="2">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.16485052659999999" green="1" blue="0.19501212679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Tpv-YR-O9Z" secondAttribute="trailing" id="IEZ-c3-qgT"/>
+                                    <constraint firstItem="Tpv-YR-O9Z" firstAttribute="leading" secondItem="yoG-No-8br" secondAttribute="leading" id="lGv-OJ-Qpo"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tpv-YR-O9Z" secondAttribute="bottom" id="u5K-LV-jw4"/>
+                                    <constraint firstItem="Tpv-YR-O9Z" firstAttribute="top" secondItem="yoG-No-8br" secondAttribute="top" id="u8C-Wp-O3d"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99396635259999999" green="0.99705451730000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yoG-No-8br" secondAttribute="bottom" constant="50" id="1oK-Tz-iij"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yoG-No-8br" secondAttribute="trailing" constant="50" id="8gI-yV-8zx"/>
+                            <constraint firstItem="yoG-No-8br" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="G1g-Dr-Yyy"/>
+                            <constraint firstItem="URB-Fr-fm3" firstAttribute="height" secondItem="yoG-No-8br" secondAttribute="height" id="H1V-zI-f1E"/>
+                            <constraint firstItem="URB-Fr-fm3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="KWJ-AL-eGe"/>
+                            <constraint firstItem="yoG-No-8br" firstAttribute="top" secondItem="URB-Fr-fm3" secondAttribute="bottom" constant="50" id="WjL-OE-oL7"/>
+                            <constraint firstItem="URB-Fr-fm3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="si3-y9-5m1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="URB-Fr-fm3" secondAttribute="trailing" constant="50" id="yYa-cb-WBB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="137.4384236453202"/>
+        </scene>
+    </scenes>
+</document>

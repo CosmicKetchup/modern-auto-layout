@@ -20,13 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = UINavigationController(rootViewController: RootViewController())
         window?.makeKeyAndVisible()
         
-        let families = UIFont.familyNames
-        families.sorted().forEach {
-            print("\($0)")
-            let names = UIFont.fontNames(forFamilyName: $0)
-            print(names)
-        }
-        
         return true
     }
 

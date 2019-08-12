@@ -15,14 +15,6 @@ class RootViewController: UIViewController {
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return view
     }()
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
