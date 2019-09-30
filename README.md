@@ -1,6 +1,6 @@
 # Personal Notes
 
-[![](https://img.shields.io/badge/Modern%20Auto%20Layout-v1.2-36A9AE?logo=gumroad)](https://useyourloaf.com/autolayout/) [![](https://img.shields.io/badge/Swift-5.0-FA7343?logo=swift)](#)
+[![](https://img.shields.io/badge/Modern%20Auto%20Layout-v1.2-36A9AE?logo=gumroad)](https://useyourloaf.com/autolayout/) [![](https://img.shields.io/badge/Xcode-10.3-3d8af0?logo=xcode)](#) [![](https://img.shields.io/badge/Swift-5.0-FA7343?logo=swift)](#)
 
 #### Table of Contents
 1. [Programmatic Constraints](#programmatic-constraints)
@@ -372,7 +372,7 @@ For more information about each trait, visit the [developer documentation](https
 #### What & How Big is an Em?
 > An _em_ is a typographical measure that defines a distance equal to the type size or a space equal to the square of the type size. The name comes from the traditional use of the width of the capital **M** to approximate the type size.
 
-> In _Session 227_ from WWDC 2015 on internalization, Apple says they calculate an em value from the number of **"M"** characters that fit in the visible screen width at the standard system font size of 14 points.
+> In Session 227 from WWDC 2015 on internalization, Apple says they calculate an em value from the number of **M** characters that fit in the visible screen width at the standard system font size of 14 points.
 
 Device | Portrait _(em)_ | Landscape _(em)_
 ----|----|----
