@@ -104,6 +104,7 @@ class RootViewController: UIViewController {
         view.backgroundColor = UIColor(red: 0.549, green: 0.835, blue: 0.984, alpha: 1.00)
         view.addSubview(scrollView)
         NSLayoutConstraint.activate(commonConstraints)
+        activateConstraints(for: traitCollection)
     }
     
     private func activateConstraints(for traitCollection: UITraitCollection) {
