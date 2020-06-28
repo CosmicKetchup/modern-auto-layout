@@ -169,7 +169,7 @@ Introduced in **iOS 9**, `UIStackView` is a class that removes the need for a lo
 
 When your views are updated, either by adding or removing subviews, activating or deactivating constraints, etc., the layout engine begins its first of two layout passes. During this first pass, the engine's internal model is updated to reflect new information related to the equations that describe the relationships between the existing views. Once this is complete, any view that has been modified calls `setNeedsLayout()`, scheduling the second layout pass where the user-visible changes are implemented.
 
-:white_check_mark: **Animation Protip:** After making changes to constraints, call `layoutIfNeeded()` on a main thread to force an update.
+:100: **Animation Protip:** After making changes to constraints, call `layoutIfNeeded()` on a main thread to force an update.
 
 ## Debugging
 
@@ -212,7 +212,7 @@ Apple added two layout guides in **iOS 11** to reduce the headache surrounding a
   - `frameLayoutGuide`: used to constraint the scroll view to an external view
   - `contentLayoutGuide`: used to constrain the contents of a scroll view to its size
 
-:white_check_mark: **Floating Content Protip:** To creating a floating view, pinned to a fixed position instead of scrolling with the rest of the scroll view's content, constraint the respective view to a scroll view's `layoutMarginsGuide`.
+:100: **Floating Content Protip:** To creating a floating view, pinned to a fixed position instead of scrolling with the rest of the scroll view's content, constraint the respective view to a scroll view's `layoutMarginsGuide`.
 
 ### Managing the Keyboard
 
@@ -230,7 +230,7 @@ You may not be expecting (or even support) a keyboard in any specific view withi
 
 4. When the keyboard is hidden, reset the properties to `.zero`
 
-:white_check_mark: **Adaptive Scroll View Protip:** See Keith's custom subclass [here](https://github.com/seventhaxis/modern-auto-layout/blob/master/ch11.scroll-views/ch11e.managing-keyboard/chapter11e/AdaptiveScrollView.swift).
+:100: **Adaptive Scroll View Protip:** See Keith's custom subclass [here](https://github.com/seventhaxis/modern-auto-layout/blob/master/ch11.scroll-views/ch11e.managing-keyboard/chapter11e/AdaptiveScrollView.swift).
 
 ## Dynamic Type
 
@@ -249,7 +249,7 @@ The simplest way to honor a user's dynamic type preference is to call `UIFont.pr
 
 Additionally, for wide viewing frames, it may make sense to constrain an element to a superview's `readableContentGuide`, ensuring you're not displaying a massive wall of text on-screen.
 
-:white_check_mark: **Readable Stack View Protip:** Embed your `UIStackView` inside a container `UIView` and constrain the stack to the containing view's readable guide.
+:100: **Readable Stack View Protip:** Embed your `UIStackView` inside a container `UIView` and constrain the stack to the containing view's readable guide.
 
 ### Scaling Dynamic Type
 
@@ -279,7 +279,7 @@ Apple introduced `UIFontMetrics` in **iOS 11**, making it much easier to load cu
   exampleLabel.adjustsFontForContentSizeCategory = true
 ```
 
-:white_check_mark: **Custom Font Protip:** Check for all loaded and available fonts with the following loop:
+:100: **Custom Font Protip:** Check for all loaded and available fonts with the following loop:
 
 ```swift
   UIFont.familyNames.sorted().forEach { family in
